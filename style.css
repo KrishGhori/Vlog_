@@ -1,196 +1,179 @@
-/* Reset and basic styles */
-body {
-    font-family: Arial, sans-serif;
+/* ===== Global Reset ===== */
+* {
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-header {
-    background-color: #222;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header h1, header h2 {
-    margin: 0;
-}
-
-nav {
-    background-color: #444;
-    text-align: center;
-    padding: 10px 0;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #ffd700;
-}
-
-section {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-}
-
-.home h2, .content h3, section h2 {
-    color: #222;
-}
-
-.home .tagline {
-    font-size: 1.2em;
-    color: #555;
-}
-
-article {
-    margin-bottom: 20px;
-    padding: 15px;
-    border-left: 4px solid #444;
-    background-color: #f9f9f9;
-}
-
-fieldset {
-    padding: 15px;
-    margin-top: 20px;
-    border: 2px solid #444;
-    border-radius: 5px;
-}
-
-legend {
-    font-weight: bold;
-    padding: 0 10px;
-}
-
-input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="search"], input[type="file"], textarea, select {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0 15px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
     box-sizing: border-box;
 }
 
-input[type="submit"], input[type="reset"], input[type="button"] {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #222;
-    color: #fff;
-    cursor: pointer;
-    margin-right: 10px;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(120deg, #f4f7fb, #e9eef5);
+    color: #333;
+    line-height: 1.7;
 }
 
-input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
-    background-color: #555;
+/* ===== Navbar ===== */
+.navbar {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-table, th, td {
-    border: 1px solid #ccc;
+/* ===== Sections ===== */
+section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 1100px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-th, td {
-    padding: 10px;
+/* ===== Headings ===== */
+h2, h3 {
+    font-weight: 700;
+}
+
+h2 {
+    border-left: 6px solid #0d6efd;
+    padding-left: 12px;
+    margin-bottom: 25px;
+}
+
+/* ===== Articles (Cards) ===== */
+article {
+    background: #f9fafc;
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    border-left: 5px solid #0d6efd;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+/* ===== Lists ===== */
+ol li {
+    padding: 6px 0;
+    font-weight: 500;
+}
+
+/* ===== Highlight Box ===== */
+.bg-primary {
+    border-radius: 12px;
+    font-size: 1.1rem;
     text-align: center;
+    box-shadow: 0 5px 15px rgba(13,110,253,0.4);
+}
+
+/* ===== Forms ===== */
+fieldset {
+    border: none;
+    padding: 25px;
+    border-radius: 14px;
+    background: #f4f7fb;
+}
+
+legend {
+    font-weight: 700;
+    padding: 0 10px;
+    color: #0d6efd;
+}
+
+input, textarea, select {
+    border-radius: 8px !important;
+    border: 1px solid #ccc !important;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #0d6efd !important;
+    box-shadow: 0 0 5px rgba(13,110,253,0.4);
+}
+
+/* ===== Buttons ===== */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.btn {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    border: none;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 22px;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== Table ===== */
+table {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 th {
-    background-color: #444;
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
     color: #fff;
+    font-weight: 600;
 }
 
-td {
-    background-color: #f9f9f9;
+tr:hover td {
+    background: #eef3ff;
 }
 
-figure {
-    display: inline-block;
-    margin: 10px;
-    text-align: center;
+/* ===== Gallery ===== */
+figure img, .embed {
+    transition: 0.3s;
 }
 
-figure img {
-    width: 250px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
+figure img:hover, .embed:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
-figcaption {
-    margin-top: 5px;
-    font-style: italic;
-    color: #555;
+/* ===== Carousel ===== */
+.carousel img {
+    border-radius: 16px;
 }
 
-dialog {
-    padding: 20px;
-    border: 2px solid #444;
-    border-radius: 10px;
-    background-color: #fff;
+/* ===== Typewriter ===== */
+.typewriter {
+    font-weight: bold;
+    color: #6610f2;
 }
 
-audio, video {
-    display: block;
-    margin: 10px 0;
-    max-width: 100%;
-}
-
-mark {
-    background-color: yellow;
-}
-
-.tt {
-    font-family: monospace;
-}
-
-/* Typewriter effect */
-.typewriter tt {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid #444;
-    animation: type 4s steps(40) 1;
-}
-
-@keyframes type {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
+/* ===== Footer ===== */
 footer {
-    background-color: #222;
+    background: linear-gradient(135deg, #212529, #000);
     color: #fff;
+    padding: 20px;
     text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
 }
 
-.embed {
-    width: 250px;
-    object-fit: cover; 
-    border-radius: 10px;
-    margin: 20px;
+/* ===== Dialog ===== */
+dialog {
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease;
 }
 
-.shadow{
-    Text-shadow:2px 2px 2px #e399a4;
-    Letter-spacing:2px;
-    Text-indent:10px;
-
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
