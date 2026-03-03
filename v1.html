@@ -21,23 +21,66 @@ body {
     background: linear-gradient(180deg,#f8f9fa,#e9efff);
     color: #343a40;
 }
-
-/* ===== NAVBAR ===== */
+/* PREMIUM NAVBAR */
 .navbar {
-    background: #1b1f38 !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    padding: 12px 0;
+    transition: all 0.3s ease;
 }
-.navbar-brand i {
-    color: #ff4b2b;
+
+/* Brand Styling */
+.navbar-brand {
     font-size: 1.5rem;
-    margin-right: 5px;
+    letter-spacing: 1px;
+    color: #fff !important;
+    transition: 0.3s;
 }
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+/* Nav Links */
 .navbar-nav .nav-link {
-    transition: color 0.3s, transform 0.3s;
+    color: #f1f1f1 !important;
+    font-weight: 500;
+    margin-left: 15px;
+    position: relative;
+    transition: 0.3s;
 }
-.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
-    color: #ff4b2b;
-    transform: scale(1.1);
+
+/* Hover Animation Underline */
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: white;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hover Effect */
+.navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+/* Active Link Highlight */
+.navbar-nav .nav-link.active {
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link.active::after {
+    width: 100%;
 }
 
 /* ===== HERO VIDEO ===== */
