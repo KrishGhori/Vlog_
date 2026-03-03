@@ -1,11 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog - VlogSite</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            padding-top:80px;
+            background:#eef1f7;
+        }
+        .card{
+            transition:0.3s;
+        }
+        .card:hover{
+            transform:translateY(-10px);
+            box-shadow:0 15px 30px rgba(0,0,0,0.2);
+        }
+        footer{
+            background:#212529;
+            color:white;
+            padding:20px 0;
+            text-align:center;
+            margin-top:50px;
+        }
+    </style>
 </head>
 <body>
-    
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">VlogSite</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="v1.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="content.html">Content</a></li>
+        <li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="table.html">Table</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="container my-5">
+    <h2 class="text-center mb-5 fw-bold">Latest Blog Posts</h2>
+
+    <div class="row g-4">
+
+        <!-- Blog 1 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">My First Trip to Goa</h5>
+                    <p class="card-text">
+                        Exploring beaches, nightlife, and local seafood in Goa.
+                    </p>
+                    <p class="text-muted">15 Jan 2025</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog 2 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Top 5 Street Foods</h5>
+                    <p class="card-text">
+                        A guide to the most delicious street foods you must try.
+                    </p>
+                    <p class="text-muted">20 Jan 2025</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog 3 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/400x250" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Morning Routine</h5>
+                    <p class="card-text">
+                        How I stay productive and creative every day.
+                    </p>
+                    <p class="text-muted">25 Jan 2025</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 VlogSite | All Rights Reserved
+</footer>
+
 </body>
 </html>
