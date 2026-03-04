@@ -1,57 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VlogSite | Home</title>
-
-<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Icons -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
-<!-- Custom CSS -->
+<link rel="stylesheet" href="style.css">
 <style>
-  /* ===== BODY ===== */
+  /* ===== GLOBAL ===== */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
     padding-top: 80px;
+    font-family: 'Poppins', sans-serif;
     background: linear-gradient(180deg,#f8f9fa,#e9efff);
     color: #343a40;
 }
-/* PREMIUM NAVBAR */
+
+/* ===== PREMIUM NAVBAR ===== */
 .navbar {
     background: linear-gradient(90deg, #0d6efd, #6610f2);
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     padding: 12px 0;
-    transition: all 0.3s ease;
 }
 
-/* Brand Styling */
 .navbar-brand {
     font-size: 1.5rem;
-    letter-spacing: 1px;
     color: #fff !important;
-    transition: 0.3s;
 }
 
-.navbar-brand:hover {
-    transform: scale(1.05);
-}
-
-/* Nav Links */
 .navbar-nav .nav-link {
     color: #f1f1f1 !important;
-    font-weight: 500;
     margin-left: 15px;
     position: relative;
-    transition: 0.3s;
 }
 
-/* Hover Animation Underline */
 .navbar-nav .nav-link::after {
     content: "";
     position: absolute;
@@ -63,255 +44,120 @@ body {
     transition: 0.3s;
 }
 
-.navbar-nav .nav-link:hover::after {
-    width: 100%;
-}
-
-/* Hover Effect */
-.navbar-nav .nav-link:hover {
-    color: #ffffff !important;
-    transform: translateY(-2px);
-}
-
-/* Active Link Highlight */
-.navbar-nav .nav-link.active {
-    color: #fff !important;
-    font-weight: 600;
-}
-
+.navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link.active::after {
     width: 100%;
 }
 
-/* ===== HERO VIDEO ===== */
-.hero-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    text-align: center;
-    color: #fff;
-}
-.hero-section video {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    filter: brightness(0.4) blur(1px);
-}
-.hero-section h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 15px;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    animation: fadeInDown 1s ease forwards;
-}
-.hero-section p {
-    font-size: 1.5rem;
-    margin-bottom: 25px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    animation: fadeInUp 1s ease forwards;
-    animation-delay: 0.5s;
-}
-.hero-section .btn {
-    padding: 15px 35px;
-    font-size: 1.2rem;
-    border-radius: 50px;
-    background: linear-gradient(90deg,#ff416c,#ff4b2b);
+/* ===== BUTTON STYLE ===== */
+.btn-primary {
+    background: linear-gradient(90deg,#0d6efd,#6610f2);
     border: none;
-    color: #fff;
-    font-weight: 600;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-    transition: all 0.3s ease;
-}
-.hero-section .btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+    border-radius: 50px;
 }
 
-/* ===== FEATURED VLOGS ===== */
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 50px;
-    color: #1b1f38;
-}
-.vlog-card {
-    background: #fff;
-    border-radius: 20px;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.vlog-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 18px 45px rgba(0,0,0,0.2);
-}
-.vlog-card .icon {
-    font-size: 55px;
-    color: #ff4b2b;
-    margin-bottom: 15px;
-    transition: transform 0.3s;
-}
-.vlog-card:hover .icon {
-    transform: rotate(20deg) scale(1.1);
-}
-
-/* ===== SUBSCRIBE SECTION ===== */
-.subscribe-section {
-    text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(135deg,#ff416c,#ff4b2b);
-    color: #fff;
-    border-radius: 20px;
-    margin: 50px 0;
-    box-shadow: 0 8px 35px rgba(0,0,0,0.2);
-}
-.subscribe-section h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-.subscribe-section p {
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-}
-.subscribe-form input {
-    padding: 15px 20px;
-    margin: 5px;
-    border-radius: 50px;
-    border: none;
-    outline: none;
-    width: 250px;
-}
-.subscribe-form button {
-    padding: 15px 30px;
-    border-radius: 50px;
-    border: none;
-    background: #fff;
-    color: #ff4b2b;
-    font-weight: 700;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-.subscribe-form button:hover {
-    background: #ffe0e0;
+.btn-primary:hover {
     transform: scale(1.05);
+}
+
+/* ===== CARDS ===== */
+.card {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
 }
 
 /* ===== FOOTER ===== */
 footer {
     background: #1b1f38;
-    color: #fff;
+    color: white;
     text-align: center;
-    padding: 30px 0;
-}
-footer .social-icons i {
-    font-size: 26px;
-    margin: 0 12px;
-    cursor: pointer;
-    transition: transform 0.3s, color 0.3s;
-}
-footer .social-icons i:hover {
-    transform: scale(1.3);
-    color: #ff416c;
+    padding: 25px 0;
+    margin-top: 50px;
 }
 
-/* ===== ANIMATIONS ===== */
-@keyframes fadeInDown { from {opacity:0; transform: translateY(-30px);} to {opacity:1; transform: translateY(0);} }
-@keyframes fadeInUp { from {opacity:0; transform: translateY(30px);} to {opacity:1; transform: translateY(0);} }
+footer i {
+    font-size: 22px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+footer i:hover {
+    color: #ff416c;
+    transform: scale(1.2);
+}
 </style>
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#"><i class="bi bi-camera-video"></i> VlogSite</a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="content.html">Content</a></li>
-        <li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
-        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="table.html">Table</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-      </ul>
-    </div>
-  </div>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+<a class="navbar-brand fw-bold" href="#">VlogSite</a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link active" href="v1.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="content.html">Content</a></li>
+<li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
+<li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" href="table.html">Table</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+</ul>
+</div>
+</div>
 </nav>
 
-<!-- HERO VIDEO SECTION -->
-<section class="hero-section">
-  <video autoplay muted loop>
-    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-  </video>
-  <div class="container position-relative">
-    <h1>Real Life. Real Vlogs.</h1>
-    <p>Travel • Food • Daily Lifestyle</p>
-    <a href="#featured" class="btn btn-lg">Explore Vlogs</a>
-  </div>
+<!-- HERO -->
+<section class="text-center py-5 mt-5">
+<div class="container">
+<h1 class="fw-bold">Real Life. Real Vlogs.</h1>
+<p>Travel • Food • Lifestyle</p>
+<a href="videos.html" class="btn btn-primary">Explore Videos</a>
+</div>
 </section>
 
-<!-- FEATURED VLOGS -->
-<section id="featured" class="container my-5">
-  <h2 class="section-title">Featured Vlogs</h2>
-  <div class="row g-4">
-    <div class="col-md-4">
-      <div class="vlog-card">
-        <i class="bi bi-airplane icon"></i>
-        <h4>Travel Vlogs</h4>
-        <p>Road trips, city walks, and beautiful destinations.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="vlog-card">
-        <i class="bi bi-egg-fried icon"></i>
-        <h4>Food Vlogs</h4>
-        <p>Street food, cafes, and honest food reviews.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="vlog-card">
-        <i class="bi bi-heart icon"></i>
-        <h4>Daily Life</h4>
-        <p>Simple moments and real-life experiences.</p>
-      </div>
-    </div>
-  </div>
+<!-- FEATURES -->
+<section class="container my-5">
+<div class="row g-4">
+<div class="col-md-4">
+<div class="card p-4 text-center">
+<h5>Travel</h5>
+<p>Explore cities & adventures.</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card p-4 text-center">
+<h5>Food</h5>
+<p>Street food & cafe reviews.</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card p-4 text-center">
+<h5>Daily Life</h5>
+<p>Creative lifestyle content.</p>
+</div>
+</div>
+</div>
 </section>
 
-<!-- SUBSCRIBE -->
-<section class="subscribe-section container">
-  <h2>Subscribe for Weekly Uploads</h2>
-  <p>New videos every Friday 🎥</p>
-  <form class="subscribe-form d-flex justify-content-center flex-wrap">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <button type="submit">Subscribe Now</button>
-  </form>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 VlogSite | Designed for College Project</p>
-  <div class="social-icons mt-2">
-    <i class="bi bi-instagram"></i>
-    <i class="bi bi-youtube"></i>
-    <i class="bi bi-facebook"></i>
-  </div>
+<p>© 2026 VlogSite | College Project</p>
+<i class="bi bi-instagram"></i>
+<i class="bi bi-youtube"></i>
+<i class="bi bi-facebook"></i>
 </footer>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
