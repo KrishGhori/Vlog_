@@ -1,272 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>About - VlogSite</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        /* PREMIUM NAVBAR */
-.navbar {
-    background: linear-gradient(90deg, #0d6efd, #6610f2);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    padding: 12px 0;
-    transition: all 0.3s ease;
-}
-
-/* Brand Styling */
-.navbar-brand {
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-    color: #fff !important;
-    transition: 0.3s;
-}
-
-.navbar-brand:hover {
-    transform: scale(1.05);
-}
-
-/* Nav Links */
-.navbar-nav .nav-link {
-    color: #f1f1f1 !important;
-    font-weight: 500;
-    margin-left: 15px;
-    position: relative;
-    transition: 0.3s;
-}
-
-/* Hover Animation Underline */
-.navbar-nav .nav-link::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    left: 0;
-    bottom: -5px;
-    background: white;
-    transition: 0.3s;
-}
-
-.navbar-nav .nav-link:hover::after {
-    width: 100%;
-}
-
-/* Hover Effect */
-.navbar-nav .nav-link:hover {
-    color: #ffffff !important;
-    transform: translateY(-2px);
-}
-
-/* Active Link Highlight */
-.navbar-nav .nav-link.active {
-    color: #fff !important;
-    font-weight: 600;
-}
-
-.navbar-nav .nav-link.active::after {
-    width: 100%;
-}
-        body{
-            padding-top:80px;
-            background:#f4f6fb;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        /* HERO SECTION */
-        .hero{
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
-            background-size: cover;
-            background-position: center;
-            color:white;
-            padding:120px 0;
-            text-align:center;
-        }
-
-        .hero h1{
-            font-size:3rem;
-            font-weight:700;
-        }
-
-        .hero p{
-            font-size:1.2rem;
-            opacity:0.9;
-        }
-
-        /* PROFILE SECTION */
-        .profile-img{
-            width:250px;
-            border-radius:20px;
-            box-shadow:0 20px 40px rgba(0,0,0,0.2);
-            transition:0.4s;
-        }
-
-        .profile-img:hover{
-            transform:scale(1.05);
-        }
-
-        .about-card{
-            background:white;
-            padding:40px;
-            border-radius:20px;
-            box-shadow:0 20px 40px rgba(0,0,0,0.08);
-        }
-
-        /* STATS SECTION */
-        .stats{
-            background: linear-gradient(90deg,#0d6efd,#6610f2);
-            color:white;
-            padding:60px 0;
-            margin-top:60px;
-        }
-
-        .stat-box{
-            text-align:center;
-        }
-
-        .stat-box h2{
-            font-size:2.5rem;
-            font-weight:bold;
-        }
-
-        /* SKILLS */
-        .skill-card{
-            background:white;
-            padding:30px;
-            border-radius:15px;
-            transition:0.3s;
-            box-shadow:0 10px 20px rgba(0,0,0,0.05);
-        }
-
-        .skill-card:hover{
-            transform:translateY(-10px);
-            box-shadow:0 20px 30px rgba(0,0,0,0.15);
-        }
-
-        footer{
-            background:#111827;
-            color:white;
-            padding:25px 0;
-            text-align:center;
-            margin-top:60px;
-        }
-
-        .social a{
-            text-decoration:none;
-            margin:0 10px;
-            color:white;
-            font-size:1.2rem;
-        }
-    </style>
+<title>VlogSite | Blog</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">VlogSite</a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="v1.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="content.html">Content</a></li>
-        <li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
-        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="table.html">Table</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-      </ul>
-    </div>
-  </div>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+<a class="navbar-brand fw-bold" href="index.html">VlogSite</a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="content.html">Content</a></li>
+<li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
+<li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" href="table.html">Table</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+</ul>
+</div>
+</div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="container">
-        <h1>About VlogSite</h1>
-        <p>Capturing Travel, Food & Lifestyle Stories Around the World</p>
-    </div>
-</section>
-
-<!-- PROFILE SECTION -->
-<section class="container my-5">
-    <div class="row align-items-center g-5">
-        <div class="col-md-5 text-center">
-            <img src="https://via.placeholder.com/300x350" class="profile-img">
-        </div>
-        <div class="col-md-7">
-            <div class="about-card">
-                <h2 class="fw-bold mb-3">Hi, I'm Krish Ghori 👋</h2>
-                <p class="lead">
-                    I created VlogSite to share my travel experiences, street food explorations,
-                    and daily lifestyle content. My goal is to inspire creativity and adventure
-                    through storytelling and cinematic visuals.
-                </p>
-                <p>
-                    From beaches in Goa to hidden street food spots, I document real experiences
-                    that connect with people who love exploration and authentic content.
-                </p>
-
-                <div class="social mt-4">
-                    <a href="#">YouTube</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">Twitter</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- STATS SECTION -->
-<section class="stats">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 stat-box">
-                <h2>150+</h2>
-                <p>Videos Created</p>
-            </div>
-            <div class="col-md-4 stat-box">
-                <h2>50K+</h2>
-                <p>Total Subscribers</p>
-            </div>
-            <div class="col-md-4 stat-box">
-                <h2>1M+</h2>
-                <p>Total Views</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SKILLS -->
-<section class="container my-5">
-    <h2 class="text-center mb-5 fw-bold">My Expertise</h2>
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="skill-card text-center">
-                <h5>🎬 Video Editing</h5>
-                <p>Professional cinematic editing and storytelling techniques.</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="skill-card text-center">
-                <h5>🌍 Travel Planning</h5>
-                <p>Discovering unique destinations and hidden gems.</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="skill-card text-center">
-                <h5>🍴 Food Reviewing</h5>
-                <p>Exploring authentic street food and restaurant experiences.</p>
-            </div>
-        </div>
-    </div>
+<section class="container mt-5 pt-5">
+<h2 class="text-center mb-4">Latest Blogs</h2>
+<div class="card p-4">
+<h4>My Goa Experience</h4>
+<p>Beaches, food, nightlife and adventure moments.</p>
+<a href="#" class="btn btn-primary btn-sm">Read More</a>
+</div>
 </section>
 
 <footer>
-    © 2026 VlogSite | Designed with ❤️
+<p>© 2026 VlogSite</p>
 </footer>
 
 </body>
