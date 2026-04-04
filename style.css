@@ -18,6 +18,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: clip;
 }
 
 body {
@@ -31,7 +32,7 @@ body {
         radial-gradient(circle at top right, rgba(124, 58, 237, 0.16), transparent 26%),
         linear-gradient(180deg, var(--bg-1), var(--bg-2));
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 .navbar {
@@ -46,6 +47,19 @@ body {
     color: #fff !important;
     letter-spacing: 0.4px;
     font-weight: 700;
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 0.3rem 0.5rem;
+}
+
+.navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.18rem rgba(147, 197, 253, 0.35);
 }
 
 .navbar-nav .nav-link {
@@ -429,7 +443,8 @@ footer {
     .blog-card,
     .table-card,
     .developer-panel {
-        padding: 30px;
+        padding: 28px;
+        border-radius: 24px;
     }
 
     .hero-metrics {
@@ -438,6 +453,7 @@ footer {
 
     .feature-card {
         padding: 24px;
+        border-radius: 24px;
     }
 
     .gallery-grid img {
@@ -451,11 +467,25 @@ footer {
         padding-right: 16px;
     }
 
+    .navbar-brand {
+        font-size: 1.35rem;
+    }
+
     .navbar-collapse {
         margin-top: 10px;
         border-radius: 12px;
         background: rgba(17, 24, 39, 0.92);
         padding: 10px 12px;
+        box-shadow: 0 18px 30px rgba(15, 23, 42, 0.2);
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-toggler-icon {
+        width: 1.1em;
+        height: 1.1em;
     }
 
     .navbar-nav .nav-link {
@@ -464,11 +494,11 @@ footer {
     }
 
     .page-shell {
-        padding: 16px 0 38px;
+        padding: 12px 0 34px;
     }
 
     .hero-panel {
-        padding: 24px 20px;
+        padding: 18px 14px;
         border-radius: 22px;
     }
 
@@ -491,6 +521,7 @@ footer {
 
     .hero-actions .btn {
         width: 100%;
+        min-height: 48px;
     }
 
     .hero-metrics {
@@ -503,14 +534,14 @@ footer {
     .blog-card,
     .table-card,
     .developer-panel {
-        padding: 22px 18px;
-        border-radius: 22px;
+        padding: 18px 16px;
+        border-radius: 18px;
     }
 
     .feature-icon {
-        width: 64px;
-        height: 64px;
-        font-size: 1.7rem;
+        width: 58px;
+        height: 58px;
+        font-size: 1.5rem;
     }
 
     .table-card table {
@@ -529,6 +560,40 @@ footer {
         padding-top: 74px;
     }
 
+    .container,
+    .container-fluid {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .navbar {
+        padding: 8px 0;
+    }
+
+    .navbar-brand {
+        font-size: 1.05rem;
+        margin-left: 6px;
+    }
+
+    .navbar-toggler {
+        padding: 0.22rem 0.34rem;
+    }
+
+    .navbar-toggler-icon {
+        width: 0.88em;
+        height: 0.88em;
+    }
+
+    .page-shell::before,
+    .page-shell::after,
+    .hero-panel::before {
+        display: none;
+    }
+
+    .page-shell {
+        padding: 6px 0 20px;
+    }
+
     .hero-panel,
     .feature-card,
     .media-card,
@@ -537,14 +602,11 @@ footer {
     .table-card,
     .developer-panel {
         border-radius: 18px;
+        padding: 12px 10px;
     }
 
     .hero-panel {
-        padding: 20px 16px;
-    }
-
-    .section-heading {
-        font-size: 1.45rem;
+        padding: 12px 10px;
     }
 
     .hero-copy,
@@ -555,14 +617,60 @@ footer {
     .blog-card p,
     .gallery-card p,
     .table-card p {
+        font-size: 0.84rem;
+        line-height: 1.55;
+    }
+
+    .hero-actions {
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .hero-actions .btn {
+        min-height: 42px;
+        font-size: 0.9rem;
+    }
+
+    .section-heading {
+        font-size: 1.12rem;
+        line-height: 1.18;
+        margin-bottom: 8px;
+    }
+
+    .feature-card h4,
+    .media-card h5,
+    .blog-card h4,
+    .gallery-card h4,
+    .table-card h4 {
         font-size: 0.95rem;
+        margin-bottom: 6px;
     }
 
     .metric {
-        padding: 12px;
+        padding: 8px;
+        border-radius: 16px;
     }
 
     .metric strong {
-        font-size: 1.08rem;
+        font-size: 0.95rem;
+    }
+
+    .metric span {
+        font-size: 0.76rem;
+    }
+
+    .table-card table {
+        font-size: 0.78rem;
+    }
+
+    .table-card thead th,
+    .table-card tbody td {
+        padding: 0.45rem 0.35rem;
+    }
+
+    footer {
+        margin-top: 12px;
+        padding: 12px 10px;
+        font-size: 0.78rem;
     }
 }
