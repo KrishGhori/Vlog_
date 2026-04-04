@@ -218,6 +218,10 @@ section.container-fluid,
     gap: 14px;
 }
 
+.table-responsive {
+    border-radius: 18px;
+}
+
 .metric {
     padding: 16px;
     border-radius: 20px;
@@ -405,6 +409,20 @@ footer {
         padding-top: 78px;
     }
 
+    .page-shell {
+        padding: 20px 0 48px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.75rem, 4.6vw, 2.8rem);
+    }
+
+    .hero-copy,
+    .section-lead,
+    .page-copy {
+        font-size: 1rem;
+    }
+
     .hero-panel,
     .media-card,
     .gallery-card,
@@ -415,19 +433,56 @@ footer {
     }
 
     .hero-metrics {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .feature-card {
+        padding: 24px;
+    }
+
+    .gallery-grid img {
+        border-radius: 16px;
     }
 }
 
 @media (max-width: 767.98px) {
+    .navbar .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .navbar-collapse {
+        margin-top: 10px;
+        border-radius: 12px;
+        background: rgba(17, 24, 39, 0.92);
+        padding: 10px 12px;
+    }
+
     .navbar-nav .nav-link {
         margin-left: 0;
         padding: 8px 0;
     }
 
+    .page-shell {
+        padding: 16px 0 38px;
+    }
+
     .hero-panel {
         padding: 24px 20px;
         border-radius: 22px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.6rem, 8vw, 2.2rem);
+        line-height: 1.15;
+    }
+
+    .eyebrow,
+    .media-chip,
+    .hero-badge {
+        font-size: 0.82rem;
+        padding: 8px 12px;
+        margin-bottom: 14px;
     }
 
     .hero-actions {
@@ -438,6 +493,10 @@ footer {
         width: 100%;
     }
 
+    .hero-metrics {
+        grid-template-columns: 1fr;
+    }
+
     .feature-card,
     .media-card,
     .gallery-card,
@@ -446,5 +505,64 @@ footer {
     .developer-panel {
         padding: 22px 18px;
         border-radius: 22px;
+    }
+
+    .feature-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 1.7rem;
+    }
+
+    .table-card table {
+        font-size: 0.92rem;
+    }
+
+    footer {
+        margin-top: 20px;
+        padding: 18px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    body {
+        padding-top: 74px;
+    }
+
+    .hero-panel,
+    .feature-card,
+    .media-card,
+    .gallery-card,
+    .blog-card,
+    .table-card,
+    .developer-panel {
+        border-radius: 18px;
+    }
+
+    .hero-panel {
+        padding: 20px 16px;
+    }
+
+    .section-heading {
+        font-size: 1.45rem;
+    }
+
+    .hero-copy,
+    .section-lead,
+    .page-copy,
+    .feature-card p,
+    .media-card p,
+    .blog-card p,
+    .gallery-card p,
+    .table-card p {
+        font-size: 0.95rem;
+    }
+
+    .metric {
+        padding: 12px;
+    }
+
+    .metric strong {
+        font-size: 1.08rem;
     }
 }
