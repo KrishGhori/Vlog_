@@ -4,97 +4,372 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>About - Music Player</title>
+<title>About - VlogSite</title>
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-    /* ===== GLOBAL ===== */
-body {
-    padding-top: 80px;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(180deg,#f8f9fa,#e9efff);
-    color: #343a40;
-}
+    :root {
+        --bg-1: #f6f8ff;
+        --bg-2: #edf3ff;
+        --ink: #1d2433;
+        --muted: #5f6b82;
+        --primary: #0d6efd;
+        --accent: #7c3aed;
+        --card: rgba(255, 255, 255, 0.78);
+        --line: rgba(255, 255, 255, 0.5);
+    }
 
-/* ===== PREMIUM NAVBAR ===== */
-.navbar {
-    background: linear-gradient(90deg, #0d6efd, #6610f2);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    padding: 12px 0;
-}
+    * {
+        box-sizing: border-box;
+    }
 
-.navbar-brand {
-    font-size: 1.5rem;
-    color: #fff !important;
-}
+    html {
+        scroll-behavior: smooth;
+    }
 
-.navbar-nav .nav-link {
-    color: #f1f1f1 !important;
-    margin-left: 15px;
-    position: relative;
-}
+    body {
+        margin: 0;
+        padding-top: 86px;
+        font-family: 'Poppins', sans-serif;
+        color: var(--ink);
+        background:
+            radial-gradient(circle at top left, rgba(13, 110, 253, 0.16), transparent 30%),
+            radial-gradient(circle at top right, rgba(124, 58, 237, 0.16), transparent 26%),
+            linear-gradient(180deg, var(--bg-1), var(--bg-2));
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
 
-.navbar-nav .nav-link::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    left: 0;
-    bottom: -5px;
-    background: white;
-    transition: 0.3s;
-}
+    .navbar {
+        background: rgba(17, 24, 39, 0.78);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
+        padding: 14px 0;
+    }
 
-.navbar-nav .nav-link:hover::after,
-.navbar-nav .nav-link.active::after {
-    width: 100%;
-}
+    .navbar-brand {
+        font-size: 1.45rem;
+        color: #fff !important;
+        letter-spacing: 0.4px;
+    }
 
-/* ===== BUTTON STYLE ===== */
-.btn-primary {
-    background: linear-gradient(90deg,#0d6efd,#6610f2);
-    border: none;
-    border-radius: 50px;
-}
+    .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.82) !important;
+        margin-left: 14px;
+        position: relative;
+        font-weight: 500;
+    }
 
-.btn-primary:hover {
-    transform: scale(1.05);
-}
+    .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #ffffff, #93c5fd);
+        transition: width 0.28s ease;
+    }
 
-/* ===== CARDS ===== */
-.card {
-    border-radius: 20px;
-    border: none;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link.active::after {
+        width: 100%;
+    }
 
-.card:hover {
-    transform: translateY(-8px);
-}
+    .nav-link.active {
+        color: #ffffff !important;
+    }
 
-/* ===== FOOTER ===== */
-footer {
-    background: #1b1f38;
-    color: white;
-    text-align: center;
-    padding: 25px 0;
-    margin-top: 50px;
-}
+    .page-shell {
+        position: relative;
+        isolation: isolate;
+        padding: 24px 0 56px;
+    }
 
-footer i {
-    font-size: 22px;
-    margin: 0 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+    .page-shell::before,
+    .page-shell::after {
+        content: "";
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(2px);
+        opacity: 0.8;
+        z-index: -1;
+        animation: float 10s ease-in-out infinite;
+    }
 
-footer i:hover {
-    color: #ff416c;
-    transform: scale(1.2);
-}
+    .page-shell::before {
+        width: 220px;
+        height: 220px;
+        top: -24px;
+        right: -80px;
+        background: rgba(124, 58, 237, 0.16);
+    }
+
+    .page-shell::after {
+        width: 160px;
+        height: 160px;
+        left: -70px;
+        top: 220px;
+        background: rgba(13, 110, 253, 0.14);
+        animation-delay: -4s;
+    }
+
+    .hero-panel,
+    .feature-card,
+    .developer-panel {
+        background: var(--card);
+        border: 1px solid var(--line);
+        box-shadow: 0 24px 60px rgba(30, 41, 59, 0.12);
+        backdrop-filter: blur(18px);
+    }
+
+    .hero-panel {
+        border-radius: 28px;
+        padding: 42px;
+        position: relative;
+        overflow: hidden;
+        animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-panel::before {
+        content: "";
+        position: absolute;
+        inset: auto -60px -60px auto;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(13, 110, 253, 0.22), transparent 70%);
+    }
+
+    .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: rgba(13, 110, 253, 0.1);
+        color: #185adb;
+        font-weight: 600;
+        font-size: 0.92rem;
+        margin-bottom: 18px;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 4vw, 4rem);
+        line-height: 1.06;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        margin-bottom: 18px;
+    }
+
+    .hero-copy {
+        max-width: 720px;
+        color: var(--muted);
+        font-size: 1.04rem;
+        margin-bottom: 28px;
+    }
+
+    .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 26px;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        border: none;
+        border-radius: 999px;
+        padding: 12px 22px;
+        box-shadow: 0 14px 28px rgba(13, 110, 253, 0.24);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 30px rgba(13, 110, 253, 0.28);
+    }
+
+    .btn-outline-dark {
+        border-radius: 999px;
+        padding: 12px 22px;
+    }
+
+    .hero-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .metric {
+        padding: 16px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(255, 255, 255, 0.65);
+    }
+
+    .metric strong {
+        display: block;
+        font-size: 1.25rem;
+        margin-bottom: 4px;
+    }
+
+    .metric span {
+        color: var(--muted);
+        font-size: 0.93rem;
+    }
+
+    .section-heading {
+        font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        margin-bottom: 10px;
+    }
+
+    .section-lead {
+        color: var(--muted);
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+    .feature-card {
+        border-radius: 24px;
+        padding: 28px 24px;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+        animation: fadeUp 0.8s ease both;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 70px rgba(30, 41, 59, 0.16);
+        border-color: rgba(13, 110, 253, 0.22);
+    }
+
+    .feature-icon {
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 18px;
+        border-radius: 22px;
+        display: grid;
+        place-items: center;
+        font-size: 2rem;
+        background: linear-gradient(135deg, rgba(13, 110, 253, 0.12), rgba(124, 58, 237, 0.14));
+        animation: float 7s ease-in-out infinite;
+    }
+
+    .feature-card h4 {
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .feature-card p {
+        color: var(--muted);
+        margin-bottom: 0;
+    }
+
+    .developer-panel {
+        border-radius: 28px;
+        padding: 34px;
+        text-align: center;
+        animation: fadeUp 0.9s ease both;
+    }
+
+    .avatar {
+        width: 88px;
+        height: 88px;
+        margin: 0 auto 18px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: white;
+        font-size: 2rem;
+        font-weight: 700;
+        box-shadow: 0 16px 30px rgba(13, 110, 253, 0.22);
+    }
+
+    .developer-panel p {
+        color: var(--muted);
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    footer {
+        background: linear-gradient(135deg, #111827, #1f2937);
+        color: white;
+        text-align: center;
+        padding: 22px 12px;
+        margin-top: 28px;
+    }
+
+    .fade-delay-1 { animation-delay: 0.06s; }
+    .fade-delay-2 { animation-delay: 0.12s; }
+    .fade-delay-3 { animation-delay: 0.18s; }
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(22px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 991.98px) {
+        body {
+            padding-top: 78px;
+        }
+
+        .hero-panel,
+        .developer-panel {
+            padding: 30px;
+        }
+
+        .hero-metrics {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .navbar-nav .nav-link {
+            margin-left: 0;
+            padding: 8px 0;
+        }
+
+        .hero-panel {
+            padding: 24px 20px;
+            border-radius: 22px;
+        }
+
+        .hero-actions {
+            flex-direction: column;
+        }
+
+        .hero-actions .btn {
+            width: 100%;
+        }
+
+        .feature-card,
+        .developer-panel {
+            padding: 24px 18px;
+            border-radius: 22px;
+        }
+    }
 </style>
 
 </head>
@@ -112,104 +387,98 @@ footer i:hover {
 <li class="nav-item"><a class="nav-link" href="v1.html">Home</a></li>
 <li class="nav-item"><a class="nav-link" href="content.html">Content</a></li>
 <li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
-<li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
 <li class="nav-item"><a class="nav-link" href="table.html">Table</a></li>
-<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+<li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
 </ul>
 </div>
 </div>
 </nav>
 
-<!-- About Section -->
-<section class="about-section">
-<div class="container">
-
-<div class="row text-center mb-5">
-<div class="col">
-<h1 class="fw-bold">About Our Music Player</h1>
-<p class="text-muted">
-A simple and modern web-based music player that allows users to enjoy their favorite songs anytime.
-</p>
-</div>
-</div>
-
-<div class="row g-4">
-
-<!-- Feature 1 -->
-<div class="col-md-4">
-<div class="card about-card p-4 text-center">
-
-<div class="feature-icon mb-3">🎵</div>
-
-<h4>Easy Music Streaming</h4>
-
-<p class="text-muted">
-Play your favorite songs instantly with a smooth and responsive music player interface.
-</p>
-
-</div>
-</div>
-
-<!-- Feature 2 -->
-<div class="col-md-4">
-<div class="card about-card p-4 text-center">
-
-<div class="feature-icon mb-3">⚡</div>
-
-<h4>Fast Performance</h4>
-
-<p class="text-muted">
-Optimized for speed and performance to give you a seamless listening experience.
-</p>
-
-</div>
-</div>
-
-<!-- Feature 3 -->
-<div class="col-md-4">
-<div class="card about-card p-4 text-center">
-
-<div class="feature-icon mb-3">📱</div>
-
-<h4>Responsive Design</h4>
-
-<p class="text-muted">
-Works perfectly on desktop, tablet, and mobile devices.
-</p>
-
-</div>
-</div>
-
-</div>
-
-</div>
+<main class="page-shell">
+<section class="container">
+    <div class="hero-panel">
+        <div class="eyebrow">About VlogSite</div>
+        <h1 class="hero-title">A cleaner, faster music experience built for every screen.</h1>
+        <p class="hero-copy">
+            VlogSite blends smooth playback, simple navigation, and a modern visual style so the music player feels polished on desktop, tablet, and mobile.
+        </p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="videos.html">Explore Videos</a>
+            <a class="btn btn-outline-dark" href="content.html">View Content</a>
+        </div>
+        <div class="hero-metrics">
+            <div class="metric">
+                <strong>Fast</strong>
+                <span>Quick-loading interface</span>
+            </div>
+            <div class="metric">
+                <strong>Responsive</strong>
+                <span>Works on tablet and phone</span>
+            </div>
+            <div class="metric">
+                <strong>Animated</strong>
+                <span>Subtle motion and hover states</span>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- Developer Section -->
-<section class="py-5 bg-light">
+<section class="container py-4 py-md-5">
+    <div class="text-center mb-4 mb-md-5">
+        <h2 class="section-heading">What makes it better</h2>
+        <p class="section-lead">
+            The page uses a softer visual hierarchy, glass-style cards, and responsive spacing so it stays readable and attractive at every size.
+        </p>
+    </div>
 
-<div class="container text-center">
+    <div class="row g-4">
+        <div class="col-12 col-md-4">
+            <div class="feature-card fade-delay-1">
+                <div class="feature-icon">🎵</div>
+                <h4>Easy Music Streaming</h4>
+                <p>Play songs with a clean, distraction-free layout designed for quick browsing and smooth interaction.</p>
+            </div>
+        </div>
 
-<h2 class="fw-bold mb-3">Developer</h2>
+        <div class="col-12 col-md-4">
+            <div class="feature-card fade-delay-2">
+                <div class="feature-icon">⚡</div>
+                <h4>Fast Performance</h4>
+                <p>Optimized spacing, lightweight styling, and subtle animation keep the experience feeling responsive.</p>
+            </div>
+        </div>
 
-<p class="text-muted">
-This project was developed by <strong>Krish Ghori</strong>.
-</p>
-
-<p>
-A web developer passionate about creating modern web applications and interactive user experiences.
-</p>
-
-</div>
-
+        <div class="col-12 col-md-4">
+            <div class="feature-card fade-delay-3">
+                <div class="feature-icon">📱</div>
+                <h4>Responsive Design</h4>
+                <p>Layouts automatically stack and resize for mobile and tablet screens without feeling cramped.</p>
+            </div>
+        </div>
+    </div>
 </section>
+
+<section class="container py-2 py-md-4">
+    <div class="developer-panel">
+        <div class="avatar">K</div>
+        <h2 class="section-heading mb-2">Developer</h2>
+        <p class="mb-2">
+            This project was developed by <strong>Krish Ghori</strong>.
+        </p>
+        <p class="mb-0">
+            A web developer focused on building modern interfaces that feel polished, practical, and easy to use across devices.
+        </p>
+    </div>
+</section>
+</main>
 
 <!-- Footer -->
-<footer class="bg-dark text-white text-center p-3">
+<footer>
 
 <p class="mb-0">
-© 2026 Music Player | Developed by Krish Ghori
+© 2026 VlogSite | Developed by Krish Ghori
 </p>
 
 </footer>
